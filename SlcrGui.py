@@ -3,11 +3,12 @@
 # (c) 2001 Juergen Riegel
 # License LGPL
 
-import FreeCAD, FreeCADGui, os
+import FreeCAD, FreeCADGui, os, Slcr
 
 class CmdExportVisible:
     def Activated(self):
-        FreeCAD.Console.PrintMessage("Hello, World!\n")
+        Slcr.devReload()
+        Slcr.exportVisible()
     def IsActive(self):
         return True
     def GetResources(self):
@@ -22,7 +23,8 @@ class CmdExportVisible:
 
 class CmdSlice:
     def Activated(self):
-        FreeCAD.Console.PrintMessage("Hello, World!\n")
+        Slcr.devReload()
+        Slcr.slice()
     def IsActive(self):
         return True
     def GetResources(self):
@@ -35,7 +37,8 @@ class CmdSlice:
 
 class CmdSliceInfo:
     def Activated(self):
-        FreeCAD.Console.PrintMessage("Hello, World!\n")
+        Slcr.devReload()
+        Slcr.sliceInfo()
     def IsActive(self):
         return True
     def GetResources(self):
@@ -48,7 +51,8 @@ class CmdSliceInfo:
 
 class CmdExportGcode:
     def Activated(self):
-        FreeCAD.Console.PrintMessage("Hello, World!\n")
+        Slcr.devReload()
+        Slcr.exportGcode()
     def IsActive(self):
         return True
     def GetResources(self):
