@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Gui::Dialog::DlgSettingsSlcr</class>
+ <widget class="QWidget" name="Gui::Dialog::DlgSettingsSlcr">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>641</width>
+    <height>416</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Slic3r Tools Settings</string>
+  </property>
+  <property name="title" stdset="0">
+   <string>Hello World</string>
+  </property>
+  <widget class="Gui::PrefFileChooser" name="fileChooser" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>500</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>350</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1000</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="prefEntry" stdset="0">
+    <cstring>slic3rPath</cstring>
+   </property>
+   <property name="prefPath" stdset="0">
+    <cstring>Mod/slcr</cstring>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>431</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Path to slic3r executable:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>431</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Path to slic3r profile .ini file:</string>
+   </property>
+  </widget>
+  <widget class="Gui::PrefFileChooser" name="fileChooser_2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>500</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>350</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1000</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="prefEntry" stdset="0">
+    <cstring>slic3rIniPath</cstring>
+   </property>
+   <property name="prefPath" stdset="0">
+    <cstring>Mod/slcr</cstring>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Gui::PrefFileChooser</class>
+   <extends>QWidget</extends>
+   <header>gui::preffilechooser.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

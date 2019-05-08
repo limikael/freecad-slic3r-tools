@@ -1,5 +1,9 @@
 <!DOCTYPE RCC><RCC version="1.0">
     <qresource> 
+        <file>icons/preferences-slic3r_tools.svg</file>
         <file>icons/Slic3r.svg</file>
+        <file>icons/Slic3rGcode.svg</file>
+        <file>icons/Slic3rInfo.svg</file>
+        <file>icons/Stl.svg</file>
     </qresource>
 </RCC> 

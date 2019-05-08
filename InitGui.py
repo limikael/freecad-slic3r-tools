@@ -3,6 +3,7 @@
 # (c) 2001 Juergen Riegel
 # License LGPL
 
+import SlcrResources3
 
 class SlcrWorkbench ( Workbench ):
     "Slcr workbench object"
@@ -14,7 +15,7 @@ class SlcrWorkbench ( Workbench ):
     
     def Initialize(self):
         # load the module
-        import SlcrGui
+        import SlcrGui,SlcrRoot,os
         commands=[
             'Slcr_ExportVisible',
             'Slcr_Slice',
@@ -24,6 +25,11 @@ class SlcrWorkbench ( Workbench ):
 
         self.appendToolbar('Slic3r Tools',commands)
         self.appendMenu('Slic&3r Tools',commands)
+
+        FreeCADGui.addPreferencePage(
+            os.path.dirname(SlcrRoot.__file__)+
+            '/Resources/ui/slcr-prefs.ui','Slic3r Tools'
+        )
     
     def GetClassName(self):
         return "Gui::PythonWorkbench"
