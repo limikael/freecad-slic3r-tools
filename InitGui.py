@@ -15,8 +15,15 @@ class SlcrWorkbench ( Workbench ):
     def Initialize(self):
         # load the module
         import SlcrGui
-        self.appendToolbar('Slic3r Tools',['Slcr_HelloWorld'])
-        self.appendMenu('Slic&3r Tools',['Slcr_HelloWorld'])
+        commands=[
+            'Slcr_ExportVisible',
+            'Slcr_Slice',
+            'Slcr_SliceInfo',
+            'Slcr_ExportGcode'
+        ]
+
+        self.appendToolbar('Slic3r Tools',commands)
+        self.appendMenu('Slic&3r Tools',commands)
     
     def GetClassName(self):
         return "Gui::PythonWorkbench"

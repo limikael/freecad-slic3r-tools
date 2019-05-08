@@ -3,14 +3,63 @@
 # (c) 2001 Juergen Riegel
 # License LGPL
 
-import FreeCAD, FreeCADGui
+import FreeCAD, FreeCADGui, os
 
-class CmdHelloWorld:
+class CmdExportVisible:
     def Activated(self):
         FreeCAD.Console.PrintMessage("Hello, World!\n")
     def IsActive(self):
         return True
     def GetResources(self):
-        return {'Pixmap': 'freecad', 'MenuText': 'Hello World', 'ToolTip': 'Print Hello World'}
+        return {
+            'Pixmap': os.path.dirname(__file__)+"/Resources/icons/Stl.svg",
+            'MenuText': 'Export visible as .stl', 
+            'ToolTip':
+                "Export visible as .stl\n\n"+
+                "Before you can run this command you need\n"+
+                "to save the document to give it a name."
+        }
 
-FreeCADGui.addCommand('Slcr_HelloWorld', CmdHelloWorld())
+class CmdSlice:
+    def Activated(self):
+        FreeCAD.Console.PrintMessage("Hello, World!\n")
+    def IsActive(self):
+        return True
+    def GetResources(self):
+        return {
+            'Pixmap': os.path.dirname(__file__)+"/Resources/icons/Slic3r.svg",
+            'MenuText': 'Run Slic3r',
+            'ToolTip':
+                "Run Slic3r"
+        }
+
+class CmdSliceInfo:
+    def Activated(self):
+        FreeCAD.Console.PrintMessage("Hello, World!\n")
+    def IsActive(self):
+        return True
+    def GetResources(self):
+        return {
+            'Pixmap': os.path.dirname(__file__)+"/Resources/icons/Slic3rInfo.svg",
+            'MenuText': 'Get slicing info',
+            'ToolTip':
+                "Get Slic3r info"
+        }
+
+class CmdExportGcode:
+    def Activated(self):
+        FreeCAD.Console.PrintMessage("Hello, World!\n")
+    def IsActive(self):
+        return True
+    def GetResources(self):
+        return {
+            'Pixmap': os.path.dirname(__file__)+"/Resources/icons/Slic3rGcode.svg",
+            'MenuText': 'Export visible as .gcode',
+            'ToolTip':
+                "Export visible as .gcode"
+        }
+
+FreeCADGui.addCommand('Slcr_ExportVisible', CmdExportVisible())
+FreeCADGui.addCommand('Slcr_Slice', CmdSlice())
+FreeCADGui.addCommand('Slcr_SliceInfo', CmdSliceInfo())
+FreeCADGui.addCommand('Slcr_ExportGcode', CmdExportGcode())
