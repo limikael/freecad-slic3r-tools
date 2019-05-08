@@ -12,6 +12,14 @@ def exportVisible():
         DialogUtil.showErrorMessage(e)
 
 def slice():
+    global Slcr_subprocess
+
+    try:
+        Slcr_subprocess
+
+    except NameError:
+        Slcr_subprocess=None
+
     try:
         doc=SlcrDoc()
         doc.exportVisible()
@@ -20,7 +28,10 @@ def slice():
         if not slic3rPath.strip():
             raise Exception("Please set the path to the slic3r executable in preferences")
 
-        subprocess.Popen([slic3rPath,doc.getStlFileName()])
+        if Slcr_subprocess:
+            Slcr_subprocess.terminate()
+
+        Slcr_subprocess=subprocess.Popen([slic3rPath,doc.getStlFileName()])
 
     except Exception as e:
         DialogUtil.showErrorMessage(e)
