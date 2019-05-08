@@ -1,6 +1,4 @@
-import FreeCAD
-import os
-import Mesh
+import FreeCAD, os, Mesh, subprocess
 
 class SlcrDoc:
     def __init__(self):
@@ -46,3 +44,31 @@ class SlcrDoc:
             raise Exception("Please save the document first to give it a filename.")
 
         return os.path.splitext(self.doc.FileName)[0]+".stl"
+
+    def getGcodeFileName(self):
+        if self.doc.FileName=="":
+            raise Exception("Please save the document first to give it a filename.")
+
+        return os.path.splitext(self.doc.FileName)[0]+".gcode"
+
+    def generateGcode(self):
+        preferences=FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Mod/slcr")
+        slic3rPath=preferences.GetString('slic3rPath')
+        if not slic3rPath.strip():
+            raise Exception("Please set the path to the slic3r executable in preferences")
+
+        slic3rIniPath=preferences.GetString('slic3rIniPath')
+        if not slic3rIniPath.strip():
+            raise Exception("Please set the path to the slic3r profile .ini in preferences")
+
+        slic3rOpts=[
+            slic3rPath,
+            "--no-gui",
+            "--load",
+            slic3rIniPath,
+            self.getStlFileName(),
+            "--output",
+            self.getGcodeFileName()
+        ]
+
+        subprocess.check_output(slic3rOpts)
