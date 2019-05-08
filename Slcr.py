@@ -1,4 +1,5 @@
-import os, importlib, sys
+import os, importlib, sys, FreeCAD, subprocess
+
 from SlcrDoc import SlcrDoc
 from SlcrDialogUtil import DialogUtil
 
@@ -11,7 +12,18 @@ def exportVisible():
         DialogUtil.showErrorMessage(e)
 
 def slice():
-    pass
+    try:
+        doc=SlcrDoc()
+        doc.exportVisible()
+        preferences=FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Mod/slcr")
+        slic3rPath=preferences.GetString('slic3rPath')
+        if not slic3rPath.strip():
+            raise Exception("Please set the path to the slic3r executable in preferences")
+
+        subprocess.Popen([slic3rPath,doc.getStlFileName()])
+
+    except Exception as e:
+        DialogUtil.showErrorMessage(e)
 
 def sliceInfo():
     pass

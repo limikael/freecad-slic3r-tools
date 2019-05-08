@@ -39,5 +39,10 @@ class SlcrDoc:
 #        for obj in visibleObjs:
 #            print(obj.Name)
 
-        stlFileName=os.path.splitext(self.doc.FileName)[0]+".stl"
-        Mesh.export(visibleObjs,stlFileName)
+        Mesh.export(visibleObjs,self.getStlFileName())
+
+    def getStlFileName(self):
+        if self.doc.FileName=="":
+            raise Exception("Please save the document first to give it a filename.")
+
+        return os.path.splitext(self.doc.FileName)[0]+".stl"
