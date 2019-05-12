@@ -21,4 +21,6 @@ Toolbar can only work with one profile. To export the current profile from slic3
 Export Config... from inside Slic3r.
 
 ## Tools
-<img src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3r.svg?sanitize=true">
+<div style="position: relative">
+<img style="width: 100px; right: 0" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3r.svg?sanitize=true">
+</div>
