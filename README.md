@@ -7,7 +7,7 @@ as well as quickly generate the .gcode file.
 
 ## Settings
 
-Before you can use the module there are a few settings you need to set. To access these settings, go to Edit >> Preferences and then select "Slic3r Tools". The settings are:
+Before you can use the module there are a few settings you need to set. To access these settings, go to "Edit >> Preferences" and then select "Slic3r Tools". The settings are:
 
 ### Path to slic3r executable
 
@@ -17,10 +17,14 @@ Set up the path to your where your slic3r executable is on your hard drive. If y
 
 This should point to a slic3r .ini file. The .ini file contains information about which printer you are using as well as layer
 height, etc. While Slic3r has a GUI to let you work with several profiles at once and quickly change between them, the SLic3r
-Toolbar can only work with one profile. To export the current profile from slic3r and use it from Slic3r Toolbar, go to File >>
-Export Config... from inside Slic3r.
+Toolbar can only work with one profile. To export the current profile from slic3r and use it from Slic3r Toolbar, go to
+"File >> Export Config..." from inside Slic3r.
 
 ## Tools
 <img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Stl.svg?sanitize=true">
 
 ### Export visible as .stl
+This command exports the current document as a .stl file. It works in a similar way as choosing "File... >> Export..." in
+the menu. However, while the default export option requires you to first select which objects you want to export, this
+option exports all visible object.
+
