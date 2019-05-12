@@ -22,4 +22,5 @@ Export Config... from inside Slic3r.
 
 ## Tools
 <img align="right" width="100" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Stl.svg?sanitize=true">
+
 ### Export visible as .stl
