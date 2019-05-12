@@ -22,4 +22,4 @@ Export Config... from inside Slic3r.
 
 ## Tools
 
-[[https://github.com/limikael/freecad-slic3r-tools/blob/master/Resources/icons/Slic3r.svg|alt=icon]]
+[[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]]
