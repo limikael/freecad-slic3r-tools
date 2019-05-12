@@ -7,6 +7,10 @@ def exportVisible():
     try:
         doc=SlcrDoc()
         doc.exportVisible()
+        DialogUtil.showInfoMessage(
+            "STL exported to:\n\n"+
+            doc.getStlFileName()
+        )
 
     except Exception as e:
         DialogUtil.showErrorMessage(e)
@@ -65,6 +69,10 @@ def exportGcode():
         doc=SlcrDoc()
         doc.exportVisible()
         doc.generateGcode()
+        DialogUtil.showInfoMessage(
+            "Gcode exported to:\n\n"+
+            doc.getGcodeFileName()
+        )
 
     except Exception as e:
         DialogUtil.showErrorMessage(e)
