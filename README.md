@@ -26,19 +26,19 @@ Toolbar can only work with one profile. To export the current profile from slic3
 ### Export visible as .stl
 This command exports the current document as a .stl file. It works in a similar way as choosing "File... >> Export..." in
 the menu. However, while the default export option requires you to first select which objects you want to export, this
-option exports all visible object.
+option exports all visible object. There is no prompt to ask for a file name, the name of the exported .stl file will be derived from your document file name.
 
 <img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3r.svg?sanitize=true">
 
 ### Run Slic3r
-This command...
+Export the current document as .stl. Run slic3r and open the .stl file in Slic3r.
 
 <img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3rInfo.svg?sanitize=true">
 
-### Run Slic3r
-This command...
+### Show Slic3r Info
+Show quick information for your print. The information includes estimated print time, used filament and filament cost. In order to use this command, you need to set a profile .ini file for slic3r to use, see above.
 
 <img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3rGcode.svg?sanitize=true">
 
 ### Run Slic3r
-This command...
+Export .gcode for the current document, with the current slic3r settings. In order to use this command, you need to set a profile .ini file for slic3r to use, see above. There is no prompt to ask for a file name, the name of the exported .gcode file will be derived from your document file name.
