@@ -1,12 +1,21 @@
 # freecad-slic3r-tools
 Tools for running Slic3r from FreeCAD
 
+* [Installation](https://github.com/limikael/freecad-slic3r-tools/#installation)
 * [Settings](https://github.com/limikael/freecad-slic3r-tools/#settings)
 * [Tools](https://github.com/limikael/freecad-slic3r-tools/#tools)
 
 This module lets you quickly export all visible parts in the current document, and open the resulting .stl file in Slic3r.
 You can also set up a default print profile, and directly get information about the resources that would be used to print it,
 as well as quickly generate the .gcode file.
+
+## Installation
+
+This module is not in the add-on manager (yet). In order to install it, simply download it from:
+
+https://github.com/limikael/freecad-slic3r-tools/archive/master.zip
+
+And extract it into your FreeCAD Mod directory. For more info on how to find this directory, see [this link](https://www.freecadweb.org/wiki/index.php?title=Installing_more_workbenches).
 
 ## Settings
 
