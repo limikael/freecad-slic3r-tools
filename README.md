@@ -28,3 +28,17 @@ This command exports the current document as a .stl file. It works in a similar 
 the menu. However, while the default export option requires you to first select which objects you want to export, this
 option exports all visible object.
 
+<img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3r.svg?sanitize=true">
+
+### Run Slic3r
+This command...
+
+<img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3rInfo.svg?sanitize=true">
+
+### Run Slic3r
+This command...
+
+<img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Slic3rGcode.svg?sanitize=true">
+
+### Run Slic3r
+This command...
