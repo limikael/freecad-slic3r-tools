@@ -4,6 +4,7 @@ Tools for running Slic3r from FreeCAD
 * [Installation](https://github.com/limikael/freecad-slic3r-tools/#installation)
 * [Settings](https://github.com/limikael/freecad-slic3r-tools/#settings)
 * [Tools](https://github.com/limikael/freecad-slic3r-tools/#tools)
+* [Feedback](https://github.com/limikael/freecad-slic3r-tools/#feedback)
 
 This module lets you quickly export all visible parts in the current document, and open the resulting .stl file in Slic3r.
 You can also set up a default print profile, and directly get information about the resources that would be used to print it,
@@ -54,3 +55,8 @@ Show quick information for your print. The information includes estimated print 
 
 ### Run Slic3r
 Export .gcode for the current document, with the current slic3r settings. In order to use this command, you need to set a profile .ini file for slic3r to use, see above. There is no prompt to ask for a file name, the name of the exported .gcode file will be derived from your document file name.
+
+## Feedback
+All types of feedback, suggestions and contributions are much welcome!
+
+For discussion, you can use [this thread on the FreeCAD forum](https://forum.freecadweb.org/viewtopic.php?f=9&t=36342). 
