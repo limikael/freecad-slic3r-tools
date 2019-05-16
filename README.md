@@ -2,6 +2,7 @@
 Tools for running Slic3r from FreeCAD
 
 * [Installation](https://github.com/limikael/freecad-slic3r-tools/#installation)
+* [Compatibility](https://github.com/limikael/freecad-slic3r-tools/#compatibility)
 * [Settings](https://github.com/limikael/freecad-slic3r-tools/#settings)
 * [Tools](https://github.com/limikael/freecad-slic3r-tools/#tools)
 * [Feedback](https://github.com/limikael/freecad-slic3r-tools/#feedback)
@@ -17,6 +18,12 @@ This module is not in the add-on manager (yet). In order to install it, simply d
 https://github.com/limikael/freecad-slic3r-tools/archive/master.zip
 
 And extract it into your FreeCAD Mod directory. For more info on how to find this directory, see [this link](https://www.freecadweb.org/wiki/index.php?title=Installing_more_workbenches).
+
+## Compatibility
+
+This module has been tested with FreeCAD 0.18 and Slic3r Prusa Edition 1.41.3 on Linux. It shouldn't need any external dependencies, and shold work fine other versions of Slic3r on other operating systems as well, but I haven't had a chance to test them so far. I don't think it will work with earlier versions of FreeCAD, however, since this module requires Python 3.
+
+If you have a chance to test the module on other operating systems and with other versions of Slic3r, please let me know!
 
 ## Settings
 
