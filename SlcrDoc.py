@@ -43,7 +43,15 @@ class SlcrDoc:
         if self.doc.FileName=="":
             raise Exception("Please save the document first to give it a filename.")
 
-        return os.path.splitext(self.doc.FileName)[0]+".stl"
+        dir, name = os.path.split(self.doc.FileName)
+        name = os.path.splitext(name)[0]+".stl"
+        
+        preferences = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Mod/slcr")
+        stlPath = preferences.GetString('stlExportPath').strip()
+        if stlPath:
+            dir = stlPath
+        
+        return os.path.join(dir, name)
 
     def getGcodeFileName(self):
         if self.doc.FileName=="":
