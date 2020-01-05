@@ -1,4 +1,4 @@
-import FreeCAD, os, Mesh, subprocess
+import FreeCAD, os, sys, math, Mesh, MeshPart, subprocess
 
 class SlcrDoc:
     def __init__(self):
@@ -30,6 +30,13 @@ class SlcrDoc:
         if self.doc.FileName=="":
             raise Exception("Please save the document first to give it a filename.")
 
+
+        # TODO: These should be configurable parameters
+        degrees = 3
+        millimeters = 0.1
+
+        angl = degrees * math.pi/180
+
         visibleObjs=self.getVisibleObjects()
         if not len(visibleObjs):
             raise Exception("No visible objects to export")
@@ -37,7 +44,24 @@ class SlcrDoc:
 #        for obj in visibleObjs:
 #            print(obj.Name)
 
-        Mesh.export(visibleObjs,self.getStlFileName())
+        mesh = Mesh.Mesh()
+        for obj in visibleObjs:
+            # Don't spam console with missing attribute errors for "Shape"
+            if not hasattr(obj, "Shape"):
+                continue
+
+            try:
+                shape = obj.Shape.copy(False)
+                shape.Placement= obj.getGlobalPlacement()
+                # See Mesh Design workbench => Tesselate shape => Standard
+                # LinearDeflection is "Surface deviation"
+                # AngularDeflection is "Angular deviation" but in radians (i.e. 3.14159 is 180°)
+                mesh2 = MeshPart.meshFromShape(Shape=shape, LinearDeflection=millimeters, AngularDeflection=angl, Relative=False)
+                mesh = mesh.unite(mesh2)
+            except:
+                print(obj.Name, sys.exc_info()[1])
+
+        mesh.write(Filename=self.getStlFileName())
 
     def getStlFileName(self):
         if self.doc.FileName=="":
