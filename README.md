@@ -36,6 +36,11 @@ height, etc. While Slic3r has a GUI to let you work with several profiles at onc
 Toolbar can only work with one profile. To export the current profile from slic3r and use it from Slic3r Toolbar, go to
 "File >> Export Config..." from inside Slic3r.
 
+### Destination directory for .stl files
+
+By default, slic3r-tools will export .stl files to the same direcotry as the main free cad document. If you want to
+export .stl files somewhere lese, you can set a directory here.
+
 ## Tools
 <img align="right" width="50" src="https://raw.githubusercontent.com/limikael/freecad-slic3r-tools/master/Resources/icons/Stl.svg?sanitize=true">
 
