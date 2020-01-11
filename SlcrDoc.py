@@ -6,13 +6,16 @@ class SlcrDoc:
         if not self.doc:
             raise Exception("No document open to slice")
 
-    def hasInvisibleParent(self, o):
+    def hasInvisibleParent(self, o, ptypes):
         for parent in o.InList:
-            if parent.TypeId=="App::Part" or parent.TypeId=="PartDesign::Body":
+            if parent.TypeId in ptypes:
                 if not parent.ViewObject.isVisible():
                     return True
 
-                if self.hasInvisibleParent(parent):
+                # PartDesign::Body cannot be nested with respect to visibility, but
+                # may be a parent as part of a BaseFeature relationship, so for the
+                # recursive check we only check App::Part which can be nested.
+                if self.hasInvisibleParent(parent, ("App::Part",)):
                     return True
 
         return False
@@ -21,7 +24,7 @@ class SlcrDoc:
         visibleObjs=[]
         for obj in self.doc.Objects:
             if obj.TypeId!="App::Part" and obj.TypeId!="PartDesign::Body":
-                if obj.ViewObject.isVisible() and not self.hasInvisibleParent(obj):
+                if obj.ViewObject.isVisible() and not self.hasInvisibleParent(obj, ("App::Part","PartDesign::Body")):
                     visibleObjs.append(obj)
 
         return visibleObjs
