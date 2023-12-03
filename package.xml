@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+  <name>Slic3r Tools</name>
+  <description>This module lets you quickly export all visible parts in the current document, and open the resulting .stl file in Slic3r. You can also set up a default print profile, and directly get information about the resources that would be used to print it, as well as quickly generate the .gcode file.</description>
+  <version>0.1</version>
+  <date>2020-01-11</date>
+  <maintainer email="li.mikael@gmail.com">Mikael Lindqvist</maintainer>
+  <license file="LICENSE">LGPLv2.1</license>
+  <url type="repository" branch="main">https://github.com/chennes/FreeCAD-Package</url>
+  <url type="website">https://forum.freecad.org/viewtopic.php?t=36342</url>
+  <url type="bugtracker">https://github.com/limikael/freecad-slic3r-tools/issues</url>
+  <icon>Resources/icons/Slic3r.svg</icon>
+
+  <content>
+    <workbench>
+      <classname>Slic3r Tools</classname>
+      <subdirectory>./</subdirectory>
+    </workbench>
+  </content>
+
+</package>
